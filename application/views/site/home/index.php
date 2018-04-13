@@ -1,3 +1,6 @@
+
+
+
 <?php $this->load->view('site/slider',$this->data); ?>
 
 <!-- Featured Products -->
@@ -21,7 +24,7 @@
 	<div class="carousel owl-carousel-wrap col-lg-12 col-md-12 col-sm-12">
 
 		<div class="owl-carousel" data-max-items="3">
-			<?php foreach ($product_new as $row ): ?>
+			<?php foreach ($product as $row ): ?>
 				<!-- Slide -->
 				<div>
 					<!-- Carousel Item -->
@@ -52,28 +55,25 @@
 									<span class="price" style="color: red;"><?php echo number_format( $row->price) ?> vnđ</span> 
 								</div>
 							<?php endif; ?>
-						
+
 							<div class="rating readonly-rating" data-score="4"></div>
 						</div>
 
 						<div class="product-actions">
-						    <span class="add-to-cart">
-                           
-								<span class="action-wrapper">
-									<i class="icons icon-basket-2"></i>
-									<span class="action-name">Mua ngay</span>
-								</span >
-							
-							</span>
-						
-							
-							<span class="add-to-favorites">
-								<span class="action-wrapper">
-									<i class="icons icon-heart-empty"></i>
-									<span class="action-name">Add to wishlist</span>
+                       
+                               
+								<span class="add-to-cart">
+									 <a href="<?php echo base_url('cart/add/'.$row->id) ?>">
+									<span class="action-wrapper">										
+										<i style="color: #fff" class="icons icon-basket-2"></i>
+										<span class="action-name">Add to cart</span>
+									</span>	
+									 </a>								
 								</span>
-							</span>
-						
+							   
+                        
+
+
 						</div>
 
 					</div>
@@ -89,16 +89,13 @@
 <!-- /Featured Products -->
 
 
-
-
-<!-- New Collection -->
 <div class="products-row row">
 
 	<!-- Carousel Heading -->
 	<div class="col-lg-12 col-md-12 col-sm-12">
 
 		<div class="carousel-heading">
-			<h4>Bộ sưu tập mới</h4>
+			<h4>TẤT CẢ SẢN PHẨM</h4>
 			<div class="carousel-arrows">
 				<i class="icons icon-left-dir"></i>
 				<i class="icons icon-right-dir"></i>
@@ -111,9 +108,8 @@
 	<!-- Carousel -->
 	<div class="carousel owl-carousel-wrap col-lg-12 col-md-12 col-sm-12">
 
-		
 		<div class="owl-carousel" data-max-items="3">
-			<?php foreach ($product_good as $row ): ?>
+			<?php foreach ($product_all as $row ): ?>
 				<!-- Slide -->
 				<div>
 					<!-- Carousel Item -->
@@ -144,26 +140,25 @@
 									<span class="price" style="color: red;"><?php echo number_format( $row->price) ?> vnđ</span> 
 								</div>
 							<?php endif; ?>
-						
+
 							<div class="rating readonly-rating" data-score="4"></div>
 						</div>
 
 						<div class="product-actions">
-						
-							<span class="add-to-cart">
-								<span class="action-wrapper">
-									<i class="icons icon-basket-2"></i>
-									<span class="action-name">Mua ngay</span>
-								</span >
-							</span>
-						
-							<span class="add-to-favorites">
-								<span class="action-wrapper">
-									<i class="icons icon-heart-empty"></i>
-									<span class="action-name">Add to wishlist</span>
+                       
+                               
+								<span class="add-to-cart">
+									 <a href="<?php echo base_url('cart/add/'.$row->id) ?>">
+									<span class="action-wrapper">										
+										<i style="color: #fff" class="icons icon-basket-2"></i>
+										<span class="action-name">Add to cart</span>
+									</span>	
+									 </a>								
 								</span>
-							</span>
-							
+							   
+                        
+
+
 						</div>
 
 					</div>
@@ -176,7 +171,8 @@
 	<!-- /Carousel -->
 
 </div>
-<!-- /New Collection -->
+
+
 
 
 
