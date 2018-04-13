@@ -11,18 +11,33 @@ class Home extends MY_controller
 		$this->load->model('Product_model');
 		$input=array();
 		$input['limit']=array(5,5);
-		$product_new=$this->Product_model->get_list($input);
-		$this->data['product_new']=$product_new;
+		$id=$this->uri->rsegment(3);
+		$product=$this->Product_model->get_info($id);
+		$product=$this->Product_model->get_list($input);
+		if(!$product)
+		{
+			redirect();
+		}
+		$this->data['product']=$product;
 
-		$input['limit']=array(8,6);
-		$product_good=$this->Product_model->get_list($input);
-		$this->data['product_good']=$product_good;
 
 
-	    $message=$this->session->flashdata('message');
+
+        $id=$this->uri->rsegment(3);
+        		$input['limit']=array(20,6);
+		$product_all=$this->Product_model->get_info($id);
+		$product_all=$this->Product_model->get_list($input);
+		if(!$product_all)
+		{
+			redirect();
+		}
+		$this->data['product_all']=$product_all;
+
+
+		$message=$this->session->flashdata('message');
 		$this->data['message']=$message;
 
-	
+
 
 		
 		
